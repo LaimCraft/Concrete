@@ -1,0 +1,35 @@
+Custom License with Extended Rights Reservation
+Copyright (c) 2025 LaimCraft
+
+Permission is hereby granted to use, copy, modify, merge, publish, and distribute this software and its source code, subject to the following additional conditions:
+
+1. Contributor Assignment:
+By contributing to this project in any form, including code, documentation, bug reports, or suggestions, all contributors agree to assign full and exclusive rights, including but not limited to copyright and licensing rights, to the original author of the project. Contributors waive any ownership or control over their contributions.
+
+2. License Change Policy:
+The project owner retains the unconditional right to change this license at any time. The new license will take effect immediately and will apply retroactively to all versions of the codebase, including previous releases, forks, and derivative works.
+
+3. Mandatory License Adoption:
+All users, contributors, and forks must adopt the most recent version of this license. Continued use of any version of the software (past or future) after a license update constitutes acceptance of the new license.
+
+4. Grace Period for License Refusal:
+If any individual or organization does not agree to the updated license, they must:
+- Cease use of the source code and derived software within 7 months.
+- For server operators and hosted services, cease use within 12 months of the license update.
+
+5. Copyright Transfer on Reuse:
+If any part of this software, including code snippets or conceptual derivatives, is used in the creation of another project (e.g., a new server core or platform), the original author will be automatically recognized as a co-author of the derived project, and retains copyright over all parts of the code that originated from this software.
+
+6. License Enforcement:
+Installation or usage of the software is permitted only if the user agrees to the most current version of this license. Violating the terms of the current license constitutes unauthorized use.
+
+7. No Retroactive Permission Without Consent:
+Any exceptions to these terms must be granted in writing by the original author.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
