@@ -1,4 +1,4 @@
-package ru.laimcraft.concrete;
+package ru.laimcraft.concrete.network;
 
 public class MinecraftServerConfiguration {
 }

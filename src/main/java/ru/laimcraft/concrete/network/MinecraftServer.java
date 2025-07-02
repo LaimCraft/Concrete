@@ -3,7 +3,6 @@ package ru.laimcraft.concrete.network;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
-import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.epoll.Epoll;
 import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.epoll.EpollServerSocketChannel;
@@ -30,13 +29,14 @@ public class MinecraftServer extends Thread {
                 eventLoopGroup = new NioEventLoopGroup();
             }
 
+            serverBootstrap.group(eventLoopGroup);
+
             serverBootstrap.channel(clazz);
 
             serverBootstrap.childHandler(new MinecraftChannelInitializer());
 
-            ChannelFuture channelFuture = serverBootstrap.bind("127.0.0.1", 25555).sync();
-            channelFuture.channel().closeFuture().sync();
-        } catch (InterruptedException e) {
+            ChannelFuture channelFuture = serverBootstrap.bind("127.0.0.1", 109).syncUninterruptibly();
+            channelFuture.channel().closeFuture().syncUninterruptibly();
         } finally {
             eventLoopGroup.shutdownGracefully();
         }
