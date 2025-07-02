@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="concrete:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/concrete_jar</output-path>
+    <root id="archive" name="concrete.jar">
+      <element id="module-output" name="concrete" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/netty/netty-all/4.1.113.Final/netty-all-4.1.113.Final.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
