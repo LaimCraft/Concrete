@@ -3,6 +3,7 @@ package ru.laimcraft.concrete.network;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.*;
 import ru.laimcraft.concrete.VarInt;
+import ru.laimcraft.concrete.VarLong;
 import ru.laimcraft.concrete.VarString;
 
 import java.net.SocketAddress;
@@ -38,6 +39,7 @@ public class MinecraftConnection extends SimpleChannelInboundHandler<Object> {
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("disconnect");
         this.disconnect();
     }
 
@@ -75,9 +77,23 @@ public class MinecraftConnection extends SimpleChannelInboundHandler<Object> {
 
                     System.out.println("Данные об клиенте версия протокола: " + protocolVersion +
                             ", подключился через: " + serverAddress + ":" + serverPort + ", следующая стадия: " + nextState);
-                } else {
+                } return;
+            } if(id == 1) {
+                if(buf.isReadable()) {
+                    long time = VarLong.read(buf);
+                    System.out.println(time);
+                    ByteBuf responseBuf = ctx.alloc().buffer();
+                    VarInt.write(responseBuf, 1);
+                    VarLong.write(responseBuf, time);
 
-                }
+                    ByteBuf finalBuf = ctx.alloc().buffer();
+                    VarInt.write(finalBuf, responseBuf.readableBytes());
+                    finalBuf.writeBytes(responseBuf);
+
+                    ctx.writeAndFlush(finalBuf);
+                    System.out.println("pong sending");
+                    return;
+                } return;
             }
 
             // Генерация ответа для списка сервера
